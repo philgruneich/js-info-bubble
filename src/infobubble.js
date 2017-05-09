@@ -286,7 +286,7 @@ InfoBubble.prototype.buildDom_ = function() {
       this.animationName_ + ';-webkit-animation-duration:0.3s;' +
       '-webkit-animation-iteration-count:1;}' +
       '@-webkit-keyframes ' + this.animationName_ + ' {from {' +
-      '-webkit-transform: translateY(-50%);opacity: 0} to {translateY(0);opacity: 1}}';
+      '-webkit-transform: translateY(-5rem);opacity: 0} to {translateY(0);opacity: 1}}';
 
   stylesheet.textContent = css;
   document.getElementsByTagName('head')[0].appendChild(stylesheet);
