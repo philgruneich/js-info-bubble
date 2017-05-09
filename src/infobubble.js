@@ -233,8 +233,8 @@ InfoBubble.prototype.buildDom_ = function() {
 
   // Content area
   var contentContainer = this.contentContainer_ = document.createElement('DIV');
-  contentContainer.style['overflowX'] = 'auto';
-  contentContainer.style['overflowY'] = 'auto';
+  contentContainer.style['overflowX'] = 'visible';
+  contentContainer.style['overflowY'] = 'visible';
   contentContainer.style['cursor'] = 'default';
   contentContainer.style['clear'] = 'both';
   contentContainer.style['position'] = 'relative';
@@ -283,11 +283,10 @@ InfoBubble.prototype.buildDom_ = function() {
   this.animationName_ = '_ibani_' + Math.round(Math.random() * 10000);
 
   var css = '.' + this.animationName_ + '{-webkit-animation-name:' +
-      this.animationName_ + ';-webkit-animation-duration:0.5s;' +
+      this.animationName_ + ';-webkit-animation-duration:0.3s;' +
       '-webkit-animation-iteration-count:1;}' +
       '@-webkit-keyframes ' + this.animationName_ + ' {from {' +
-      '-webkit-transform: scale(0)}50% {-webkit-transform: scale(1.2)}90% ' +
-      '{-webkit-transform: scale(0.95)}to {-webkit-transform: scale(1)}}';
+      '-webkit-transform: translateY(-50%);opacity: 0} to {translateY(0);opacity: 1}}';
 
   stylesheet.textContent = css;
   document.getElementsByTagName('head')[0].appendChild(stylesheet);
